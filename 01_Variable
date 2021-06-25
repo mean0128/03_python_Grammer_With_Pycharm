@@ -1,0 +1,55 @@
+# 단축키
+# 주석처리 : ctrl + /
+# 코드 전체 실행 : ctrl + shift + f10
+# 코드 라인 실행 : alt + shift + e
+
+'''
+변수(Variable)
+    -   형식) 변수명 = 값 or 수식 or 변수명
+    -   type 선언 없음(R과 동일)
+'''
+
+# 1. 변수와 자료
+var1 = 'Hello Python1'  # '' string : 문자열 타입
+var2 = "Hello Python2"  # "" string : 문자열 타입
+
+print(var1) # line skip 제공
+print(type(var1), type(var2))   # <class 'str'> <class 'str'>
+var1 = 100
+print(type(var1), type(var2))   # <class 'int'> <class 'str'>
+
+var3 = 150.25
+print(type(var3))   # <class 'float'>
+
+var4 = True
+print(type(var4))   # <class 'bool'>
+
+
+#2. 변수명 작성규칙
+_num1 = 10
+_num2 = 20
+print(id(_num1), id(_num2))   #   140728983453024 140728983453344 : 메모리 주소
+
+    ## 키워드 확인
+import keyword # 모듈 임포트 : R의 library 기능과 같음
+py_KeyWord = keyword.kwlist
+print("파이썬 키워드 :", py_KeyWord)
+print("len :", len(py_KeyWord))
+
+    ## 낙타체
+korScore = 90
+matScore = 85
+engScore = 75
+total = korScore + matScore + engScore
+
+    ## 변수 제거
+del var1
+
+#3. 참조변수
+	# 변수에 실제 값을 저장하는것이 아닌, 값이 저장된 메모리의 주소를 저장(메모리를 효율적으로 사용하기 위해)
+x = 150     # 150 객체의 주소
+x2 = 150    # 기존 객체가 있으면 주소 반환
+y = 45.23   # 45.23 객체의 주소
+y2 = y      # 주소 복제
+print(x, x2, y, y2)
+print(id(x), id(x2), id(y), id(y2), end='')
