@@ -1,0 +1,69 @@
+'''
+	문자열(string) : 문자들의 순서 집합
+		indexing / slicing 가능
+		문자열 = 상수취급, 수정불가
+'''
+
+# 1. 문자열 유형
+
+lineStr = "this is one line string."
+print(lineStr)
+
+multiStr = '''this
+is multi line
+string'''
+print(multiStr, end='')
+
+multiStr2 = 'this\nis multi line\nstring'
+print(multiStr2, end='')
+
+	# example) query응용
+deptno = int(input("부서번호:"))
+query = f'''select * from emp
+where deptno = {deptno}
+order by salary desc'''
+print(query, end='')
+
+# 2. 문자열 연산(+, *)
+print('python'+' programming', end='')
+print('python '*3, end='')
+
+# 3. 문자열 처리 함수
+lineStr = "   This is One Line String   "
+len(lineStr)
+lineStr.startswith('T')    # 해당 문자로 시작하는지 확인
+lineStr.lower()            # 문자열 ⇒ 소문자
+lineStr.upper()            # 문자열 ⇒ 대문자
+lineStr.swapcase()         # 대문자 ⇔ 소문자
+lineStr.lstrip()           # 좌 공백문자 제거
+lineStr.rstrip()           # 우 공백문자 제거
+lineStr.strip()            # 좌우 공백문자 제거
+lineStr.count('is')        # 문자 빈도수 조회
+lineStr.find('is')         # 왼쪽기준 문자 처음 등장하는 위치 조회
+lineStr.rfind('is')        # 오른쪽기준 문자 처음 등장하는 위치 조회
+lineStr.replace('i', 'a')  # 문자 변경
+
+word = lineStr.split()  # 토큰 생성(문자열 분리), 인자 기준으로 문자 split, 디폴트는 공백문자
+word
+merged = ' '.join(word) # 분리된 문자열 결합
+
+len(word)
+multiStr.split('\n')
+
+
+
+# 4. 인덱싱/ 슬라이싱
+print(lineStr[0:2])
+print(lineStr[0:len(lineStr)])
+print(lineStr[:])
+print(lineStr[-len(lineStr):])
+
+
+# 5. escape 문자 처리
+print("\nescape문자")
+print("\\nescape문자")
+print(r"\nescape문자")
+
+print("c:\python\work\test")
+print("c:\\python\\work\\test")
+print(r"c:\python\work\test")
