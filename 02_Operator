@@ -1,0 +1,98 @@
+'''
+연산자(Operator)
+1. 변수에 값 할당(=)
+2. 연산자 : 산술, 관계, 논리
+3. print 형식
+4. input : 입력
+'''
+
+# 1. 변수에 값 할당
+i = tot = 10
+i += 1
+tot += i
+print(i, tot)
+
+	## swap
+v1, v2, v3 = 100, 200, 300
+print(v1, v2, v3)
+v1,v2, v3 = v3,v2,v1
+print(v1, v2, v3)
+
+	## 패킹(packing) 할당
+_1st = [1,2,3,4,5]
+type(_1st)
+*v1, v2, v3 = _1st
+print(v1, v2, v3)
+
+
+# 2. 연산자
+	## 산술
+num1 = -10
+num2 = 2
+
+add = num1+num2
+subtract = num1 - num2
+multiply = num1 * num2
+divide = num1 / num2
+divide2 = num1 // num2
+mod = num1 % num2
+square = num2 ** num2 ** num2
+print(add, subtract, multiply, divide, divide2, mod, square)
+
+
+# 3. print
+help(print)
+	## package > module > function or class
+	## Help on built-in function print in module builtins
+	## print(value, ..., sep=' ', end='\n', file=sys.stdout, flush=False)
+print("010","1111","2222",sep="-", end="")
+
+
+	# format 함수 이용
+	# print(value, format())
+print("원주율=", format(3.14159, "8.3f") ) #원주율=    3.142
+print("원주율=", format(3.14159, "7.3f") ) #원주율=   3.142
+print("원주율=", format(3.14159, "6.3f") ) #원주율=  3.142
+print("원주율=", format(3.14159, "5.3f") ) #원주율= 3.142
+
+print("금액 =", format(10000, "10d")) #금액 =      10000
+print("금액 =", format(10000, "9d"))  #금액 =     10000
+print("금액 =", format(10000, "8d"))  #금액 =    10000
+print("금액 =", format(10000, "7d"))  #금액 =   10000
+print("금액 =", format(10000, "6d"))  #금액 =  10000
+print("금액 =", format(10000, "5d"))  #금액 = 10000
+
+print("금액 =", format(125000, "3,d")) #금액 = 125,000
+
+	# 형식 지정
+	# print("형식문자" %(값1, 값2, ...))
+		## %d 10진수 정수
+		## %o 8진수 정수
+		## %x 16진수 정의
+		## %f 실수(%f전체자릿수.소수점자릿)
+		## %s 문자열
+		## %c 단일 문자열
+print("금액 = %d" %(1024))
+print("금액 = %6d + %6d" %(1024, 2048))
+print("금액 = %08o(8)+ %08o(8)" %(1024, 2048))
+print("금액 = %08x(16)+ %08x(16)" %(1024, 2048))
+print("%3s = %8.3f" %("PI", 3.141592)) # 반올림 처리됨
+print("%3c = %8.3f" %("P", 3.141592)) # 반올림 처리됨
+
+	## 외부 상수 받기
+	## "{}, {}". format(value1, value2)
+print("name : {}, age : {}".format("홍길동","35")) # name : 홍길동, age : 35
+print("name : {1}, age : {0}".format("홍길동","35")) # name : 35, age : 홍길동
+
+	## format 축약형
+	## select * from emp where name = '홍길동'
+name, age = '홍길동', 35
+sql = f"select * from emp where name = '{name}' and age = {age}"
+print(sql)
+
+# 4. input : 키보드로 입력받은 모든 글자는 문자로 인식하므로 형변환 필요
+	# 형변환 함수
+	# int(), float(), str(), bool()
+a = float(input("첫번째 숫자 입력 : "))
+b = float(input("두번째 숫자 입력 : "))
+print(" a + b =", a+b)
